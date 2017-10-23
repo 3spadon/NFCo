@@ -1,0 +1,28 @@
+
+body
+{
+	padding-top: 54px;
+}
+
+@media (min-width: 992px)
+{
+	body
+	{
+		padding-top: 56px;
+	}
+
+	.logo_iut{
+		padding-left:10px;
+	}
+
+	.connexion{
+		margin-top:75px;
+	}
+
+	input {
+		margin-top:10px;
+		border-radius: 5px;
+		border-color: none;
+	}
+
+}
