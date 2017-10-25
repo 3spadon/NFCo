@@ -11,6 +11,6 @@ total="$vid $td"            #concaténation de l'id de la carte et de son horair
 echo $total | tr -d '\r' >> log_carte_lue.txt    #enleve le retour chariot ("^m") et ajoute le résulat dans un fichier de log
 echo "ID de la carte lue: "
 cat id_carte_nfc.txt
-rm -f tid temp.txt          #supression des fichiers temporaire
+rm -f tid temp.txt id_carte_nfc.txt           #supression des fichiers temporaire
 
 
