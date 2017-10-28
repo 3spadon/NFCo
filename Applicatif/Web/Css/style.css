@@ -30,5 +30,25 @@ body
 		border-color: none;
 	}
 
+	.tableau{
+		margin-top:50px;
+		margin-left:33%;
+	}
 
+}
+
+
+try
+{
+ $bdd = new PDO('mysql:host=localhost;dbname=NFCo;charset=utf8', 'root', 'root'); //CONNEXION À LA BDD
+
+}
+catch (Exception $e)
+{
+			 die('Erreur : ' . $e->getMessage()); //Si il y'a une erreur l'afficher
+}
+$reponse = $bdd->query('SELECT * FROM etudiants WHERE filière = "RT" AND année=2');
+while ($donnees = $reponse->fetch())
+{
+	 echo $donnees['id'];
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+include('genererListe.php');
 // if(isset($_SESSION['pseudo']) && isset($_SESSION['password'])){
 //   $bdd = new PDO('mysql:host=localhost;dbname=NFCo;charset=utf8', 'root', 'root');
 //   $reponse = $bdd->query('SELECT id FROM utilisateurs WHERE pseudo = "'.$_SESSION['pseudo'].'" AND password="'.$_SESSION['password'].'"');
@@ -28,7 +29,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="Css/style.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
 
@@ -69,8 +70,27 @@
     <!-- Page Content -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <H3>Connexion réussie !</H3>
+        <div class="col-lg-12 text-center tableau">
+
+          <form method="get" action="genererListe.php" id="contactform">
+            Filière <SELECT name="filiere" size="1">
+              <OPTION>RT
+              <OPTION>INFO
+              <OPTION>GEA
+              <OPTION>TC
+              <OPTION>ASUR
+              <OPTION>CASIR
+            </SELECT>
+            Année <SELECT name="année" size="1">
+              <OPTION>1
+              <OPTION>2
+            </SELECT>
+
+    			<input type="submit" value="Ok">
+          <br><br><p>Pendant la phase de développement se connecter avec la paire test/test.</p>
+    		  </form>
+
+          <?php listeEtudiants("RT","2"); ?>
         </div>
       </div>
     </div>
