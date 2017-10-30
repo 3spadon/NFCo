@@ -1,9 +1,25 @@
 <?php
 session_start();
+function get_ip()
+  {
+      if ( isset ( $_SERVER['HTTP_X_FORWARDED_FOR'] ) )
+      {
+          $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+      }
+      elseif ( isset ( $_SERVER['HTTP_CLIENT_IP'] ) )
+      {
+          $ip  = $_SERVER['HTTP_CLIENT_IP'];
+      }
+      else
+      {
+          $ip = $_SERVER['REMOTE_ADDR'];
+      }
+      return $ip;
+  }
  try
  {
   $bdd = new PDO('mysql:host=localhost;dbname=NFCo;charset=utf8', 'root', 'root'); //CONNEXION À LA BDD
-
+  $bdd2 = new PDO('mysql:host=localhost;dbname=NFCo;charset=utf8', 'root', 'root'); //CONNEXION À LA BDD
   if (!empty($_POST['pseudo']) && !empty($_POST['password'])){ //Si les champs pseudo/mot de passe ne sont pas vides
 
     $_SESSION['pseudo']=htmlentities($_POST["pseudo"]);
@@ -18,6 +34,13 @@ session_start();
 
     else
       {
+          $req = $bdd2->prepare("INSERT INTO `login_attempts` (`id`, `pseudo`, `time`, `IP`) VALUES(:id :pseudo, :time, :IP)");
+          $req->execute(array(
+          	'id' => NULL,
+          	'pseudo' => $_POST['pseudo'],
+          	'time' => CURRENT_TIMESTAMP,
+          	'IP' => '10.10.10.10',
+          	));
           header('Location: badLogin.php');
       }
 

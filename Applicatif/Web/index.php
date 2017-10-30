@@ -1,11 +1,10 @@
-
-<html lang="en">
+<html lang="fr">
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Vincent Bouchez">
 
     <title>NFCo | Connexion</title>
 
@@ -25,7 +24,7 @@
       <div class="container">
 		<img src="img/logo_uga.png" alt="logo UGA">
 		<img src="img/logo_iut.jpg" class="logo_iut" alt="logo IUT de Valence">
-        <a class="navbar-brand" href="index.php">NFCo | Gestionnaire d'absences</a>
+        <a class="navbar-brand" href="accueil.php">NFCo | Gestionnaire d'absences</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,10 +36,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">A propos</a>
+              <a class="nav-link" href="creerCours.php">Mes cours</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services.php">Services</a>
+              <a class="nav-link" href="checkCours.php">Appel</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="deconnexion.php">Déconnexion</a>

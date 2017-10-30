@@ -9,6 +9,8 @@ body
 }
 
 
+
+
 @media (min-width: 992px)
 {
 	body
@@ -24,7 +26,7 @@ body
 		margin-top:75px;
 	}
 
-	input {
+	.connexion input {
 		margin-top:10px;
 		border-radius: 5px;
 		border-color: none;
@@ -42,6 +44,85 @@ body
 	#tableau{
 		margin-left:37%;
 	}
+
+	#Boxs{
+		margin-top:150px;
+		display:inline-flex;
+	}
+
+	.BoxAccueil{
+		width: 230px;
+	 height: 230px;;
+	 border: 2px solid #E1343A;
+	 border-radius:10px;
+	 box-sizing: border-box;
+	 margin-right:25px;
+	 }
+
+	 .boxLabel{
+		 margin-top:30px;
+		 font-size: 18pt;
+	 }
+
+	 #Boxs img{
+		 padding-top:30px;
+		 width:50%;
+	 }
+
+	 #Boxs a:hover{
+		 text-decoration: none;
+	 }
+
+	 #panelCreationCours{
+		 	margin-top:100px;
+	 }
+
+	 #panelCreationCours h3{
+		 text-align:left;
+		 margin-left:10px;
+		 color:#E1343A;
+	 }
+
+	 #boxCreationCours{
+		border: 1px solid #E1343A;
+		border-radius:10px;
+		box-sizing: border-box;
+		padding:15px;
+	 }
+
+	 .formCreerCours input{
+	 border-radius: 5px;
+	 text-align:center;
+ 	 }
+
+	 .formCreerCours .date{
+		 margin-top:20px;
+	 }
+	 .formCreerCours .selectFiliere{
+	 width:100%;
+	 text-align:center;
+ 	 }
+
+	 .formCreerCours .selectTDTP{
+	 margin-top:20px;
+	 width:80px;
+	 text-align:center;
+		 }
+
+		 .formCreerCours .checkboxClasseEntiere{
+		 margin-top:20px;
+		 margin-left:-30px;
+		 margin-right:20px;
+		 }
+
+		.formCreerCours .btnAjouter{
+			margin-top:20px;
+			width:100%;
+		}
+
+		.listeCours{
+			margin-top:100px;
+		}
 
 
 }
