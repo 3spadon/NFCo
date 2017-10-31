@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('checkConnexion.php');
 
 //On vérifie les champs du formulaire côté-serveur
 if($_POST['intitule']){
@@ -36,14 +37,14 @@ if($_POST['TD']){
   $TD=$_POST['TD'];
 }
 else{
-  echo "Veuillez remplir le champ TD.";
+  $TD=0;
 }
 
 if($_POST['TP']){
   $TP=$_POST['TP'];
 }
 else{
-  echo "Veuillez remplir le champ TP.";
+  $TP=0;
 }
 
 if($_POST['classeEntiere']=='1'){

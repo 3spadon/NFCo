@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+include('checkConnexion.php');
+?>
 <html lang="fr">
 
   <head>
@@ -56,15 +60,22 @@
           <div id="panelCreationCours">
                 <h3>Ajouter un cours</h3>
                 <div id="boxCreationCours">
-                  <form method="post" action="addCoursDB.php" class="formCreerCours">
-                    Intitule <input type="text" name="intitule"><br>
-                    <div class="date">Date (a-m-j h:m:s) <input type="datetime-local" name="dateCours" value="<?php echo date("Y-m-d H:i:s");?>"></div><br>
-                    Filière <SELECT name="filiere" class="selectFiliere" size="1"><OPTION>RT<OPTION>GEA<OPTION>INFO<OPTION>TC</select><br>
-                    <input type="checkbox" name="classeEntiere" value="1" class="checkboxClasseEntiere"> Classe entière<br>
-                    TD <SELECT name="TD" size="1" class="selectTDTP"><OPTION>1<OPTION>2<OPTION>3<OPTION>4</select>
-                    TP <SELECT name="TP" size="1" class="selectTDTP"><OPTION>1<OPTION>2<OPTION>3<OPTION>4</select><br>
-                    <input type="submit" value="Ajouter le cours" class="btnAjouter">
-                  </form>
+                  <form method="post" action="/addCoursDB.php" class="formCreerCours">
+                    Intitule <input required type="text" name="intitule"><br>
+                    <div class="date">Date (a-m-j h:m:s) <input required type="datetime-local" name="dateCours" value="<?php echo date("Y-m-d H:i:s");?>"></div><br>
+                    Filière <SELECT required name="filiere" class="selectFiliere" size="1"><OPTION>RT<OPTION>GEA<OPTION>INFO<OPTION>TC</select><br>
+                    <input type="checkbox" id="classeEntiere" name="classeEntiere" onload="checkboxClasseEntiere()" onchange="checkboxClasseEntiere()" class="checkboxClasseEntiere"> Classe entière<br>
+                    <div id="selectTDTP">
+                      TD <SELECT  name="TD" size="1" class="selectTDTP"><OPTION>1<OPTION>2<OPTION>3<OPTION>4</select>
+                      TP <SELECT  name="TP" size="1" class="selectTDTP"><OPTION>1<OPTION>2<OPTION>3<OPTION>4</select><br>
+                    </div>
+                    <input type="submit" value="Ajouter le cours" class="btnAjouter" onclick="checkFormCreerCours();">
+                    <script src="form.js"></script>
+                    <script>
+
+                    </script>
+                    </form>
+                  <p id="checked"></p>
                 </div>
               </div>
           </div>

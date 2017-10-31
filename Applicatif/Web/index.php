@@ -56,10 +56,10 @@
           <h1 class="mt-5">Connexion</h1>
           <p class="lead">Nous vous invitons à vous identifier pour accéder au gestionnaire.</p>
 		  <form method="post" action="connexion.php" id="contactform">
-			<input type="text" name="pseudo" class="pseudo" value="Nom d'utilisateur"><br>
-		  <input type="password" name="password" class="password" value="Mot de passe" ><br>
+			<input type="text" name="pseudo" class="pseudo" value="Nom d'utilisateur" required><br>
+		  <input type="password" name="password" class="password" value="Mot de passe" required><br>
 			<input type="submit" value="Connexion">
-      <br><br><p>Pendant la phase de développement se connecter avec la paire test/test.</p>
+      <br><br><p>Pendant la phase de développement se connecter avec la paire moliexs/moliexs.</p>
 		  </form>
         </div>
       </div>

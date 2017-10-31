@@ -1,23 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-// if(isset($_SESSION['pseudo']) && isset($_SESSION['password'])){
-//   $bdd = new PDO('mysql:host=localhost;dbname=NFCo;charset=utf8', 'root', 'root');
-//   $reponse = $bdd->query('SELECT id FROM utilisateurs WHERE pseudo = "'.$_SESSION['pseudo'].'" AND password="'.$_SESSION['password'].'"');
-//   $nbLignes = $reponse->rowCount(); //On compte le nombre de lignes renvoyées
-//   if($nbLignes!=1) //si une ligne, alors une correspondance, càd une bonne combinaison pseudo/mdp
-//     {
-//         header('Location: index.php');
-//         exit();
-//     }
-// }
-// else{
-//   header('Location: ./index.php');
-//   exit();
-// }
-
-
-
+include('checkConnexion.php');
 ?>
 
 <html lang="fr">
@@ -87,8 +71,8 @@ session_start();
                          die('Erreur : ' . $e->getMessage()); //Si il y'a une erreur l'afficher
                  }
                  //On affiche seulement les cours enseignés par le professeur connecté
-                 $reponse = $bdd->query('SELECT cours.intitule FROM cours WHERE cours.Enseignant="'.$_SESSION['pseudo'].'" AND cours.dateCours>"'.$dateHier.'"');
-
+                 $reponse = $bdd->query('SELECT cours.intitule FROM cours WHERE cours.Enseignant="'.$_SESSION['pseudo'].'"');
+                 //$reponse = $bdd->query('SELECT cours.intitule FROM cours WHERE cours.Enseignant="'.$_SESSION['pseudo'].'" AND cours.dateCours>"'.$dateHier.'"');
                  while ($donnees = $reponse->fetch())
                  {
                   echo "<OPTION>".$donnees["intitule"];//On liste les cours associés au professeur connecté
